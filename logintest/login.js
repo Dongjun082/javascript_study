@@ -27,7 +27,7 @@ $(function() {
 function register() {
     // 내용 체크 하기
 
-    const checkResult = checkjoinfield();
+    const checkResult = checkJoinFields();
     // 변수앞에 !는 온값을 받아서 더 이상 받지않는다고 선언하는것 
     if(!checkResult){
         return;
@@ -56,7 +56,7 @@ function register() {
 }
 
 // 2. 회원가입 내용 체크 함수 만들기
-function checkjoinfield() {
+function checkJoinFields() {
 
     // id들
     
@@ -67,7 +67,7 @@ function checkjoinfield() {
     // password
     const passwordElenment = document.getElementById("password");
     // confirm-password
-    const confirmPasswordElenment = document.getElementById("confirmPassword");
+    const confirmPasswordElement = document.getElementById("confirm-password");
 
     // 유저 네임이 없으면 안됨
     if(usernameElenment.value == ""){
@@ -91,17 +91,17 @@ function checkjoinfield() {
     }
 
     // 비밀번호 확인이 없으면 안됨
-    if(confirmPasswordElenment.value == ""){
-        alert("confirmPassword을 입력해주세요.");
-        confirmPasswordElenment.focus();
+    if(confirmPasswordElement.value == ""){
+        alert("confirmassword를 입력해주세요.");
+        confirmPasswordElement.focus();
         return false;
     }
 
     // 비밀번호와 비밀번화 확인이 동일해야됨
-    if(passwordElenment.value == "" || confirmPasswordElenment.value == ""){
-        alert("password 와confirmPassword맞지 않습니다.");
-        return false;
-    }
+    // if(passwordElenment.value == "" || confirmPasswordElenment.value == ""){
+    //     alert("password 와confirmPassword맞지 않습니다.");
+    //     return false;
+    // }
 
     // 모두 통과함
     return true;
